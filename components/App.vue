@@ -24,7 +24,7 @@
             <div class="col-span-1 fas fa-bed"/>
           </div>
           <div class="col-span-4 grid grid-cols-4 flex justify-start items-center">
-            <div class="col-span-2 text-left">1</div>
+            <div class="col-span-2 text-left">{{counter}}</div>
             <div class="col-span-2 text-center"></div>
           </div>
           <b-button-group class="increment-button-group col-span-6 grid grid-cols-6">
@@ -40,6 +40,16 @@
       </p>
     </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    counter () {
+      return this.$store.state.counter
+    }
+  }
+}
+</script>
 
 <style>
   .increment-button-group {
