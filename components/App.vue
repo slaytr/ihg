@@ -10,26 +10,26 @@
     <div id="row" class="mt-4 pt-4 border-t border-dashed">
       <div class="increment-item-row grid grid-cols-12">
         <div class="col-span-2 flex justify-start items-center">
-          <div id="money" class="fas fa-money-bill-alt"/>
+          <div id="money" class="fas fa-money-bill-alt" />
         </div>
         <div class="col-span-4 grid grid-cols-4 flex justify-start items-center">
           <div class="col-span-2 text-left">
             {{ money }}
           </div>
-          <div class="col-span-2 text-center"/>
+          <div class="col-span-2 text-center" />
         </div>
       </div>
     </div>
     <div class="mt-4 pt-4 border-t border-dashed">
       <div class="increment-item-row grid grid-cols-12">
         <div class="col-span-2 grid grid-cols-2 flex justify-start items-center">
-          <div class="col-span-1 fas fa-bed"/>
+          <div class="col-span-1 fas fa-bed" />
         </div>
         <div class="col-span-4 grid grid-cols-4 flex justify-start items-center">
           <div class="col-span-2 text-left">
             {{ counter }}
           </div>
-          <div class="col-span-2 text-center"/>
+          <div class="col-span-2 text-center" />
         </div>
         <b-button-group class="increment-button-group col-span-6 grid grid-cols-6">
           <b-button class="col-span-2" variant="outline-secondary" @click="increment">
@@ -52,39 +52,39 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex'
+import { mapMutations } from 'vuex'
 
-  export default {
-    data () {
-      return {
-        makeCash: {
-          interval: null
-        },
-        money: 0
-      }
-    },
-    computed: {
-      counter () {
-        return this.$store.state.counter
-      }
-    },
-    methods: {
-      makeCashInterval () {
-        // console.log(this.data)
-        // console.log(this.state)
-        this.makeCash.interval = setInterval(() => {
-          this.money += 100 * this.counter
-        }, 3000)
-        // this.data.makeCash.interval = cashInterval;
+export default {
+  data () {
+    return {
+      makeCash: {
+        interval: null
       },
-      ...mapMutations({
-        increment: 'increment'
-      })
-    },
-    mounted () {
-      this.makeCashInterval()
+      money: 0
     }
+  },
+  computed: {
+    counter () {
+      return this.$store.state.counter
+    }
+  },
+  methods: {
+    makeCashInterval () {
+      // console.log(this.data)
+      // console.log(this.state)
+      this.makeCash.interval = setInterval(() => {
+        this.money += 100 * this.counter
+      }, 3000)
+      // this.data.makeCash.interval = cashInterval;
+    },
+    ...mapMutations({
+      increment: 'increment'
+    })
+  },
+  mounted () {
+    this.makeCashInterval()
   }
+}
 </script>
 
 <style>
