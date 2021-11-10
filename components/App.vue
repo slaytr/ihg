@@ -7,10 +7,10 @@
     <p class="mt-3 text-gray-600">
       This is a chill idle game about running a hotel
     </p>
-    <div class="mt-4 pt-4 border-t border-dashed">
+    <div id="row" class="mt-4 pt-4 border-t border-dashed">
       <div class="increment-item-row grid grid-cols-12">
         <div class="col-span-2 flex justify-start items-center">
-          <div class="fas fa-money-bill-alt"/>
+          <div id="money" class="fas fa-money-bill-alt"/>
         </div>
         <div class="col-span-4 grid grid-cols-4 flex justify-start items-center">
           <div class="col-span-2 text-left">
@@ -32,7 +32,7 @@
           <div class="col-span-2 text-center"/>
         </div>
         <b-button-group class="increment-button-group col-span-6 grid grid-cols-6">
-          <b-button @click="increment" class="col-span-2" variant="outline-secondary">
+          <b-button class="col-span-2" variant="outline-secondary" @click="increment">
             1
           </b-button>
           <b-button class="col-span-2" variant="outline-secondary">
@@ -70,12 +70,11 @@
     },
     methods: {
       makeCashInterval () {
-        const cashInterval = setInterval(() => {
-          this.money += 100 * this.counter
-        }, 3000)
         // console.log(this.data)
         // console.log(this.state)
-        this.makeCash.interval = cashInterval
+        this.makeCash.interval = setInterval(() => {
+          this.money += 100 * this.counter
+        }, 3000)
         // this.data.makeCash.interval = cashInterval;
       },
       ...mapMutations({
@@ -91,5 +90,23 @@
 <style>
   .increment-button-group {
     min-width: 50%;
+  }
+  #row {
+    perspective: 3000px;
+  }
+  @keyframes changewidth {
+    from {
+      transform: rotateY(0deg);
+    }
+
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  #money {
+    animation-duration: 1s;
+    animation-name: changewidth;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 </style>
