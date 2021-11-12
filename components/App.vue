@@ -10,26 +10,26 @@
     <div id="row" class="mt-4 pt-4 border-t border-dashed">
       <div class="increment-item-row grid grid-cols-12">
         <div class="col-span-2 flex justify-start items-center">
-          <div id="money" class="fas fa-money-bill-alt" />
+          <div id="money" class="fas fa-money-bill-alt"></div>
         </div>
         <div class="col-span-4 grid grid-cols-4 flex justify-start items-center">
           <div class="col-span-2 text-left">
             {{ money }}
           </div>
-          <div class="col-span-2 text-center" />
+          <div class="col-span-2 text-center"></div>
         </div>
       </div>
     </div>
     <div class="mt-4 pt-4 border-t border-dashed">
       <div class="increment-item-row grid grid-cols-12">
         <div class="col-span-2 grid grid-cols-2 flex justify-start items-center">
-          <div class="col-span-1 fas fa-bed" />
+          <div class="col-span-1 fas fa-bed"></div>
         </div>
         <div class="col-span-4 grid grid-cols-4 flex justify-start items-center">
           <div class="col-span-2 text-left">
             {{ counter }}
           </div>
-          <div class="col-span-2 text-center" />
+          <div class="col-span-2 text-center"></div>
         </div>
         <b-button-group class="increment-button-group col-span-6 grid grid-cols-6">
           <b-button class="col-span-2" variant="outline-secondary" @click="increment">
@@ -68,6 +68,9 @@ export default {
       return this.$store.state.counter
     }
   },
+  mounted () {
+    this.makeCashInterval()
+  },
   methods: {
     makeCashInterval () {
       // console.log(this.data)
@@ -80,9 +83,6 @@ export default {
     ...mapMutations({
       increment: 'increment'
     })
-  },
-  mounted () {
-    this.makeCashInterval()
   }
 }
 </script>

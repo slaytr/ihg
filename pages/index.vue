@@ -1,5 +1,5 @@
 <template>
-  <Controller />
+  <Controller></Controller>
 </template>
 
 <script lang="ts">
