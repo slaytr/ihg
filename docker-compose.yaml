@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  nuxt:
+    image: 248248627025.dkr.ecr.ap-southeast-2.amazonaws.com/ihg:latest
+    working_dir: /app
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    volumes:
+      # Windows
+      - .:/app
+      - ~/.aws:/root/.aws
+    command: npm run dev

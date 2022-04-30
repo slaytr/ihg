@@ -94,19 +94,19 @@ export default {
   #row {
     perspective: 3000px;
   }
-  @keyframes changewidth {
-    from {
-      transform: rotateY(0deg);
-    }
+  /*@keyframes changewidth {*/
+  /*  from {*/
+  /*    transform: rotateY(0deg);*/
+  /*  }*/
 
-    to {
-      transform: rotateY(360deg);
-    }
-  }
-  #money {
-    animation-duration: 1s;
-    animation-name: changewidth;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
+  /*  to {*/
+  /*    transform: rotateY(360deg);*/
+  /*  }*/
+  /*}*/
+  /*#money {*/
+  /*  animation-duration: 1s;*/
+  /*  animation-name: changewidth;*/
+  /*  animation-iteration-count: infinite;*/
+  /*  animation-direction: alternate;*/
+  /*}*/
 </style>
