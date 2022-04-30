@@ -9,7 +9,9 @@ services:
     ports:
       - 3000:3000
     volumes:
-      # Windows
       - .:/app
       - ~/.aws:/root/.aws
     command: npm run dev
+    environment:
+      NUXT_HOST: 0.0.0.0
+      NUXT_PORT: 3000
